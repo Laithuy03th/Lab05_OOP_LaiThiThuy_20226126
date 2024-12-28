@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="hust.soict.dsai.aims.screen.CartScreen">
+
+    <!-- Khu vực TOP -->
+    <top>
+        <VBox spacing="10" BorderPane.alignment="TOP_CENTER">
+            <!-- Thanh menu -->
+            <MenuBar>
+                <Menu text="File">
+                    <MenuItem text="Update Store"/>
+                    <MenuItem text="View store"/>
+                    <MenuItem text="View cart"/>
+                </Menu>
+                <Menu text="Help">
+                    <MenuItem text="About"/>
+                </Menu>
+            </MenuBar>
+            
+            <!-- Tiêu đề -->
+            <Label text="CART" 
+                   style="-fx-font-size: 36; -fx-text-fill: #00ffff; -fx-font-weight: bold;"
+                   BorderPane.margin="10"
+                   alignment="CENTER"/>
+        </VBox>
+    </top>
+
+    <!-- Khu vực CENTER -->
+    <center>
+        <VBox spacing="15" padding="10" alignment="CENTER">
+            <!-- Bộ lọc -->
+            <HBox spacing="10" alignment="CENTER_LEFT" BorderPane.margin="5">
+                <Label text="Filter:"/>
+                <TextField fx:id="tfFilter" promptText="Enter keyword to filter" />
+                <RadioButton text="By ID" fx:id="radioBtnFilterId" toggleGroup="filterCategory"/>
+                <RadioButton text="By Title" fx:id="radioBtnFilterTitle" toggleGroup="filterCategory" selected="true"/>
+            </HBox>
+            
+            <!-- Bảng hiển thị -->
+            <TableView fx:id="tblMedia" prefHeight="300">
+                <columns>
+                    <TableColumn text="Title" fx:id="colMediaTitle" prefWidth="200"/>
+                    <TableColumn text="Category" fx:id="colMediaCategory" prefWidth="150"/>
+                    <TableColumn text="Cost" fx:id="colMediaCost" prefWidth="100"/>
+                </columns>
+                <columnResizePolicy>
+                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                </columnResizePolicy>
+            </TableView>
+            
+            <!-- Hiển thị tổng cộng -->
+            <Label fx:id="totalLabel" 
+                   text="Total: 0 $" 
+                   style="-fx-font-size: 18; -fx-text-fill: #000000;"
+                   alignment="CENTER_RIGHT"
+                   VBox.margin="10"/>
+            
+            <!-- Các nút chức năng -->
+            <ButtonBar buttonOrder="RIGHT">
+                <Button text="Play" fx:id="btnPlay" style="-fx-font-size: 14;"/>
+                <Button text="Remove" fx:id="btnRemove" style="-fx-font-size: 14;"/>
+                <Button text="Place Order" 
+                        style="-fx-font-size: 16; -fx-background-color: red; -fx-text-fill: white;" 
+                        fx:id="btnPlaceOrder"/>
+            </ButtonBar>
+        </VBox>
+    </center>
+</BorderPane>

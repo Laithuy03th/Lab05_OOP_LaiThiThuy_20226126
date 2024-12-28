@@ -1,0 +1,26 @@
+1. Top-Level Containers
+Top-level containers are the base components that house other elements in a GUI application:
+
+AWT:
+
+Includes Frame, Dialog, and Applet.
+These are heavyweight components that rely on the native operating system's GUI elements, making them less flexible and platform-dependent.
+Swing:
+
+Includes JFrame, JDialog, and JApplet.
+Swing components are lightweight, meaning they are rendered entirely by Java, providing platform independence and support for pluggable look-and-feel, offering more customization.
+2. Component Class Names
+Swing components build upon AWT components and offer enhanced functionality. Their class names are typically prefixed with "J" to distinguish them:
+
+Element	AWT Component	Swing Component
+Button	Button	JButton
+Label	Label	JLabel
+Text Field	TextField	JTextField
+Checkbox	Checkbox	JCheckBox
+Radio Button	Checkbox within a CheckboxGroup	JRadioButton
+Menu Bar	MenuBar	JMenuBar
+Scroll Pane	ScrollPane	JScrollPane
+Panel	Panel	JPanel
+3. Additional Features in Swing
+Swing introduces new components like JList, JTable, and JComboBox, which have no direct counterparts in AWT. These components provide more flexibility and functionality out of the box.
+
